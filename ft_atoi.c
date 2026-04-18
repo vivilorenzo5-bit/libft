@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 11:45:46 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/13 12:55:08 by vlourenc         ###   ########.fr       */
+/*   Created: 2026/04/17 16:23:55 by vlourenc          #+#    #+#             */
+/*   Updated: 2026/04/17 16:51:56 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_atoi(const char *nptr)
 {
-	size_t			i;
-	unsigned char	ch;
+	size_t	i;
+	int		sign;
+	int		result;
 
-	ch = (unsigned char)c;
 	i = 0;
-	while (s[i])
+	sign = 1;
+	result = 0;
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (s[i] == ch)
-			return ((char *)(s + i));
+		if (nptr[i] == '-')
+			sign *= -1;
 		i++;
 	}
-	if (ch == '\0')
-		return ((char *)(s + i));
-	return (0);
+	while (ft_isdigit(nptr[i]))
+	{
+		result = result * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (result * sign);
 }

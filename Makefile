@@ -1,58 +1,24 @@
-.DEFAULT_GOAL	:= m
-UTILS			= $(addprefix utils/, sigsegv.cpp color.cpp check.cpp leaks.cpp)
-PARENT_DIR		= $(shell dirname $(shell pwd))
-LIBFT_PATH		= $(PARENT_DIR)
-TESTS_PATH		= tests/
-MANDATORY		= memset bzero memcpy memmove memchr memcmp strlen isalpha isdigit isalnum \
-				isascii isprint toupper tolower strchr strrchr strncmp strlcpy strlcat strnstr \
-				atoi calloc strdup substr strjoin strtrim split itoa strmapi putchar_fd putstr_fd \
-				putendl_fd putnbr_fd striteri lstnew lstadd_front lstsize lstlast lstadd_back \
-				lstdelone lstclear lstiter lstmap
-VSOPEN			= $(addprefix vs, $(MANDATORY))
+NAME = libft.a
+CC		= cc
+CFLAGS	= -Wall -Wextra -Werror
+SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlen.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_strncmp.c \
+				ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strlcpy.c ft_strlcat.c \
+				ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c \
+				ft_itoa.c
 
-CC		= clang++
-CFLAGS	= -g3 -ldl -gdwarf-4 -std=c++11 -I utils/ -I$(LIBFT_PATH) 
-UNAME = $(shell uname -s)
-ifeq ($(UNAME), Linux)
-	VALGRIND = valgrind -q --leak-check=full
-endif
-ifeq ($(IN_DOCKER),TRUE)
-	LIBFT_PATH = /project/
-endif
+OBJS = $(SRCS:.c=.o)
+COMP = cc
+AR = ar rcs
+RM = rm -f
 
-$(MANDATORY): %: mandatory_start
-	@$(CC) $(CFLAGS) $(UTILS) $(TESTS_PATH)ft_$*_test.cpp -L$(LIBFT_PATH) -lft && $(VALGRIND) ./a.out && rm -f a.out
-
-$(VSOPEN): vs%:
-	@code $(TESTS_PATH)ft_$*_test.cpp
-
-mandatory_start: update message
-	@tput setaf 6
-	make -C $(LIBFT_PATH)
-	@tput setaf 4 && echo [Tests]
-
-update:
-	@git pull
-
-message: checkmakefile
-	@tput setaf 3 && echo "If all your tests are OK and the moulinette KO you, please run the tester with valgrind (see README)"
-
-checkmakefile:
-	@ls $(LIBFT_PATH) | grep Makefile > /dev/null 2>&1 || (tput setaf 1 && echo Makefile not found. && exit 1)
-
-$(addprefix docker, $(MANDATORY)) dockerm dockera: docker%:
-	@docker rm -f mc > /dev/null 2>&1 || true
-	docker build -qt mi .
-	docker run -e IN_DOCKER=TRUE -dti --name mc -v $(LIBFT_PATH):/project/ -v $(PARENT_DIR)/libftTester:/project/libftTester mi
-	docker exec -ti mc make $* -C libftTester || true
-	@docker rm -f mc > /dev/null 2>&1
-m: $(MANDATORY)
-a: m 
+%.o: %.c
+	$(CC) $(CFLAGS) -c $<
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $^
+all: $(NAME)
 
 clean:
 	make clean -C $(LIBFT_PATH) && rm -rf a.out*
 
 fclean:
 	make fclean -C $(LIBFT_PATH) && rm -rf a.out*
-
-.PHONY:	mandatory_start m a fclean clean update message $(VSOPEN) $(MAIL)
