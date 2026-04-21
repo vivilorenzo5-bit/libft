@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/18 16:20:09 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/21 17:15:37 by vlourenc         ###   ########.fr       */
+/*   Created: 2026/04/21 16:22:34 by vlourenc          #+#    #+#             */
+/*   Updated: 2026/04/21 17:20:52 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	start;
-	size_t	end;
+	t_list	*newlist;
+	t_list	*newnode;
+	void	*tempcontent;
 
-	if (!s1 || !set)
+	if (!lst || !f || !del)
 		return (NULL);
-	start = 0;
-	while (s1[start] != '\0' && ft_strchr(set, s1[start]))
-		start++;
-	end = ft_strlen(s1);
-	while (end > start && ft_strchr(set, s1[end - 1]))
-		end--;
-	return (ft_substr(s1, start, end - start));
+	newlist = NULL;
+	while (lst)
+	{
+		tempcontent = f(lst->content);
+		newnode = ft_lstnew((void *)tempcontent);
+		if (!newnode)
+		{
+			del(tempcontent);
+			ft_lstclear(&newlist, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&newlist, newnode);
+		lst = lst->next;
+	}
+	return (newlist);
 }
