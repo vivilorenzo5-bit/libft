@@ -6,7 +6,7 @@
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/10 15:42:33 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/21 17:21:10 by vlourenc         ###   ########.fr       */
+/*   Updated: 2026/04/22 15:44:25 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <string.h>
+# include <stdio.h>
 
 typedef struct s_list
 {

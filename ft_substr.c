@@ -6,7 +6,7 @@
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 15:37:14 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/20 14:55:45 by vlourenc         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:36:07 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,24 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[len] = '\0';
 	return (str);
 }
+
+/*
+#include <stdio.h>
+int main(void)
+{
+    char *s = "42 Lisboa é o melhor";
+    char *sub;
+
+    // Extrair "Porto" (começa no índice 3, tamanho 6)
+    sub = ft_substr(s, 3, 6);
+    printf("Substring: [%s]\n", sub); // Esperado: [Lisboa]
+    free(sub);
+
+    // Teste com len maior que a string
+    sub = ft_substr(s, 3, 50);
+    printf("Substring longa: [%s]\n", sub); // Esperado: [Lisboa é o melhor]
+    free(sub);
+
+    return (0);
+}
+*/

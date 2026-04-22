@@ -6,7 +6,7 @@
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 16:20:09 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/21 17:15:37 by vlourenc         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:31:11 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,21 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	return (ft_substr(s1, start, end - start));
 }
+
+/*
+#include <stdio.h>
+int main(void)
+{
+    char *s1 = "...  Olá 42 Lisboa !!!  ";
+    char *set = ". !";
+    char *trimmed = ft_strtrim(s1, set);
+
+    if (trimmed)
+    {
+        printf("Antes:  [%s]\n", s1);
+        printf("Depois: [%s]\n", trimmed); // Esperado: [Olá 42 Lisboa]
+        free(trimmed);
+    }
+    return (0);
+}
+*/

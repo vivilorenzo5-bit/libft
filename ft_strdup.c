@@ -6,7 +6,7 @@
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 16:55:15 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/17 17:44:05 by vlourenc         ###   ########.fr       */
+/*   Updated: 2026/04/22 16:55:48 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,19 @@ char	*ft_strdup(const char *s1)
 	ft_memcpy(dest, s1, len + 1);
 	return (dest);
 }
+
+/*
+int main(void)
+{
+    char *original = "42 Lusboa";
+    char *copia = ft_strdup(original);
+
+    if (copia)
+    {
+        printf("Original: %s em %p\n", original, original);
+        printf("Cópia:    %s em %p\n", copia, copia);
+        free(copia); // need always ! ! !
+    }
+    return (0);
+}
+*/

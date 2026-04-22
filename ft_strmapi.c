@@ -6,7 +6,7 @@
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 17:57:05 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/18 18:21:07 by vlourenc         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:18:44 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,26 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	res[i] = '\0';
 	return (res);
 }
+
+/*
+char	my_map_func(unsigned int i, char c)
+{
+	if (i % 2 != 0 && c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
+}
+
+int main(void)
+{
+	char *original = "hello";
+	char *resultado = ft_strmapi(original, my_map_func);
+
+	if (resultado)
+	{
+		printf("Original:  %s\n", original);
+		printf("Mapeada:   %s\n", resultado); // Esperado: hElLo
+		free(resultado);
+	}
+	return (0);
+}
+*/

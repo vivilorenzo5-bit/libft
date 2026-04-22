@@ -6,7 +6,7 @@
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 18:24:36 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/20 18:27:35 by vlourenc         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:42:08 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,15 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
+
+/*
+int main(void)
+{
+    t_list *head = ft_lstnew("Nó 1");
+    head->next = ft_lstnew("Nó 2");
+    head->next->next = ft_lstnew("Nó 3");
+
+    printf("Tamanho da lista: %d\n", ft_lstsize(head)); // Esperado: 3
+    return (0);
+}
+*/

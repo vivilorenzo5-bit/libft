@@ -6,7 +6,7 @@
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 15:46:05 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/17 16:21:00 by vlourenc         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:25:44 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,19 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
+
+/*
+int main(void)
+{
+    char *haystack = "42 Lisboa, o melhor campus";
+    char *needle = "Lisboa";
+
+    // Teste 1: Encontra
+    printf("Teste 1: %s\n", ft_strnstr(haystack, needle, 15));
+    
+    // Teste 2: Não encontra porque o limite (len) é curto demais
+    printf("Teste 2: %s\n", ft_strnstr(haystack, needle, 5));
+    
+    return (0);
+}
+*/

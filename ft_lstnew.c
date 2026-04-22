@@ -6,7 +6,7 @@
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 17:44:03 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/20 17:58:21 by vlourenc         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:39:33 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,20 @@ t_list	*ft_lstnew(void *content)
 	newnode->next = NULL;
 	return (newnode);
 }
+
+/*
+int main(void)
+{
+    t_list *node;
+    char *str = "Primeiro Nó";
+
+    node = ft_lstnew(str);
+    if (node)
+    {
+        printf("Conteúdo: %s\n", (char *)node->content);
+        printf("Próximo: %p\n", node->next); // Deve ser 0x0 ou (nil)
+        free(node);
+    }
+    return (0);
+}
+*/

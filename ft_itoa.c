@@ -6,7 +6,7 @@
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 17:21:55 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/18 18:08:02 by vlourenc         ###   ########.fr       */
+/*   Updated: 2026/04/22 15:49:31 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,3 +53,19 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
+
+/*
+int main(void)
+{
+    char *res1 = ft_itoa(-2147483648);
+    char *res2 = ft_itoa(0);
+    char *res3 = ft_itoa(154);
+
+    printf("Int min: %s\n", res1);
+    printf("Zero:    %s\n", res2);
+    printf("Positivo:%s\n", res3);
+
+    free(res1); free(res2); free(res3);
+    return (0);
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 15:59:28 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/13 16:03:35 by vlourenc         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:19:26 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,16 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
+
+/*
+int main(void)
+{
+    char *s1 = "abcdef";
+    char *s2 = "abcdeg";
+
+    printf("Comparando 5 chars (iguais): %d\n", ft_strncmp(s1, s2, 5));
+    printf("Comparando 6 chars (diferentes): %d\n", ft_strncmp(s1, s2, 6));
+    printf("Original 6 chars: %d\n", strncmp(s1, s2, 6));
+    return (0);
+}
+*/

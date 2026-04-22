@@ -6,7 +6,7 @@
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:03:28 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/20 14:55:55 by vlourenc         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:28:47 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,18 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
+
+/*
+int main(void)
+{
+    char *s = "42 Porto - 42 Lisboa";
+
+    // Procura o último '4'
+    printf("Último '4': %s\n", ft_strrchr(s, '4')); // Esperado: 42 Lisboa
+    
+    // Procura o último '-'
+    printf("Último '-': %s\n", ft_strrchr(s, '-')); // Esperado: - 42 Lisboa
+    
+    return (0);
+}
+*/

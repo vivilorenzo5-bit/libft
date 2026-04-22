@@ -6,7 +6,7 @@
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/10 15:54:17 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/13 12:03:53 by vlourenc         ###   ########.fr       */
+/*   Updated: 2026/04/22 16:08:43 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,14 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
+
+/*
+int main(void)
+{
+    char str[10] = "123456789";
+
+    ft_memset(str, 'A', 5);
+    printf("Resultado ft_memset: %s\n", str); // Esperado: AAAAA6789
+    return (0);
+}
+*/

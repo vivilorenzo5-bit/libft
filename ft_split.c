@@ -6,7 +6,7 @@
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 15:43:24 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/20 17:21:30 by vlourenc         ###   ########.fr       */
+/*   Updated: 2026/04/22 16:44:38 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,3 +80,23 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (get_words(s, c, lst));
 }
+
+/*
+int main(void)
+{
+    char **tab;
+    int i = 0;
+
+    tab = ft_split("  O Fresneda e fixe  ", ' ');
+    if (!tab) 
+		return (1);
+    while (tab[i])
+    {
+        printf("Palavra [%d]: %s\n", i, tab[i]);
+        free(tab[i]); // Importante libertar cada palavra
+        i++;
+    }
+    free(tab); // E libertar o array
+    return (0);
+}
+*/

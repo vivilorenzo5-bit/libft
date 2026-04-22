@@ -6,7 +6,7 @@
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 16:00:03 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/18 16:19:58 by vlourenc         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:06:26 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,19 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new_str[len1 + len2] = '\0';
 	return (new_str);
 }
+
+/*
+int main(void)
+{
+    char *s1 = "42 ";
+    char *s2 = "Lisboa";
+    char *join = ft_strjoin(s1, s2);
+
+    if (join)
+    {
+        printf("Resultado: [%s]\n", join); // Esperado: [42 Lisboa]
+        free(join);
+    }
+    return (0);
+}
+*/

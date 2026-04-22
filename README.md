@@ -1,7 +1,7 @@
 *This project has been created as part of the 42 curriculum by vlourenc*
 
 ## 📝 Description
-O projeto **Libft** consiste na criação de uma biblioteca individual em C que reúne reimplementações de funções padrão da `libc`, além de funções adicionais para manipulação de strings, memória e listas ligadas[cite: 149, 196]. O objetivo principal é entender o funcionamento interno destas ferramentas e criar uma base sólida de utilitários para futuros projetos na 42.
+O projeto **Libft** consiste na criação de uma biblioteca individual em C que reúne reimplementações de funções padrão da `libc`, além de funções adicionais para manipulação de strings, memória e listas ligadas. O objetivo principal é entender o funcionamento interno destas ferramentas e criar uma base sólida de utilitários para futuros projetos na 42.
 
 ## 🛠️ Instructions
 
@@ -11,8 +11,14 @@ O projeto utiliza um `Makefile` com as flags obrigatórias `-Wall -Wextra -Werro
 - Para compilar a biblioteca base:
   ```bash
   make
+
   make all: Compila os ficheiros fonte e gera a libft.a.
-  make clean: Remove os ficheiros objeto (.o).make fclean: Remove os objetos e a biblioteca compilada.make re: Executa fclean e all consecutivamente.
+
+  make clean: Remove os ficheiros objeto (.o).
+  
+  make fclean: Remove os objetos e a biblioteca compilada.
+
+  make re: Executa fclean e all consecutivamente.
 
 ## Resources
 

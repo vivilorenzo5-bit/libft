@@ -6,7 +6,7 @@
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 16:23:55 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/17 16:51:56 by vlourenc         ###   ########.fr       */
+/*   Updated: 2026/04/22 15:29:58 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,17 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sign);
 }
+
+/*
+int	main(void)
+{
+	printf("--- Teste ft_atoi ---\n");
+	printf("Original: %d | Minha: %d\n", atoi("  -123"), ft_atoi("  -123"));
+	printf("Original: %d | Minha: %d\n", atoi(" +42abc"), ft_atoi(" +42abc"));
+	printf("Original: %d | Minha: %d\n", atoi(" \t\n 0"), ft_atoi(" \t\n 0"));
+	printf("Original: %d | Minha: %d\n", atoi(" --5"), ft_atoi(" --5"));
+	printf("Og: %d | Minha: %d\n", atoi("2147483647"), ft_atoi("2147483647"));
+	printf("Og: %d | Minha: %d\n", atoi("-2147483648"), ft_atoi("-2147483648"));
+	return (0);
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: vlourenc <vlourenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/10 16:30:30 by vlourenc          #+#    #+#             */
-/*   Updated: 2026/04/17 17:48:25 by vlourenc         ###   ########.fr       */
+/*   Updated: 2026/04/22 16:02:28 by vlourenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,15 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+/*
+int main(void)
+{
+    char src[] = "42 Lisboa";
+    char dest[10];
+
+    ft_memcpy(dest, src, 10);
+    printf("Destino após ft_memcpy: %s\n", dest);
+    return (0);
+}
+*/
